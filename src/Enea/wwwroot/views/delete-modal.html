@@ -1,0 +1,8 @@
+﻿<div class="modal-header">
+    <h3 class="modal-title" id="modal-title">Czy na pewno chcesz usunąć słowo: "{{ vm.keyWord.word }}"?</h3>
+    <p ng-show="vm.errorMessage" class="alert alert-danger"><i class="fa fa-warning"></i> {{ vm.errorMessage }}</p>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-danger" type="button" ng-click="vm.delete()"><i class="fa fa-trash"></i> USUŃ</button>
+    <button class="btn btn-info" type="button" ng-click="vm.cancel()"><i class="fa fa-mail-reply"></i> Anuluj</button>
+</div>

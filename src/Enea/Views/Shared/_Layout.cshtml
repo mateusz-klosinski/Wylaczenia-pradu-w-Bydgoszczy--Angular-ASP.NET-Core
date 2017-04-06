@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EneaMVC</title>
+
+    <link rel="stylesheet" href="~/lib/animate/animate/css/animate.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/lib/bootswatch/flatly/bootstrap.min.css"/>
+    <link rel="stylesheet" href="~/lib/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.min.css" />
+    <link rel="stylesheet" href="~/lib/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+
+
+    @Html.ApplicationInsightsJavaScript(TelemetryConfiguration)
+</head>
+
+
+<body ng-app="enea-app">
+    <div id="sidebar" class="hide-sidebar">
+        <ul class="nav">
+            <li><a href="#!/">Dzisiejsze wyłączenia <i class="fa fa-bolt pull-right"></i></a></li>
+            <li><a href="#!/@User.Identity.Name/subscription">Subskrypcja email<i class="fa fa-at pull-right"></i></a></li>
+            <li><a href="#!/@User.Identity.Name/keywords">Słowa klucze <i class="fa fa-book right pull-right"></i></a></li>
+        </ul>
+    </div>
+
+
+    <div id="wrapper" class="hide-sidebar">
+        <button id="toggle-sidebar" class="btn btn-primary btn-sm hide-sidebar"><i class="fa fa-chevron-right fa-lg"></i></button>
+        <div class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a asp-controller="Home" asp-action="Index" class="navbar-brand">EneaMVC</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#!/about">O aplikacji</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#!/@User.Identity.Name/settings" class="nav-button"><i class="fa fa-cog fa-lg nav-button-icon"></i><span class="nav-button-text left">Ustawienia </span></a></li>
+                        <li><a asp-action="Logout" asp-controller="Auth" class="nav-button"><i class="fa fa-power-off fa-lg nav-button-icon"></i><span class="nav-button-text right"> Wyloguj</span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div id="main">
+            <div class="container-fluid">
+                @RenderBody()
+            </div>
+        </div>
+
+
+
+        <div id="footer">
+            <div class="navbar navbar-fixed-bottom navbar-default">
+                <p class="text-center text-capitalize">&copy; 2016 - EneaMVC</p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+
+    <script src="~/lib/angular/angular.js"></script>
+    <script src="~/lib/angular-animate/angular-animate.min.js"></script>
+    <script src="~/lib/angular-route/angular-route.min.js"></script>
+    <script src="~/lib/angular-password/angular-password.min.js"></script>
+    <script src="~/lib/angular-bootstrap/ui-bootstrap.min.js"></script>
+    <script src="~/lib/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script src="~/lib/bootstrap-switch/dist/js/bootstrap-switch.min.js"></script>
+
+    <script src="~/js/enea-app.js"></script>
+    <script src="~/js/Controllers/homeController.js"></script>
+    <script src="~/js/Controllers/subscriptionController.js"></script>
+    <script src="~/js/Controllers/keywordsController.js"></script>
+    <script src="~/js/Controllers/deleteModalController.js"></script>
+    <script src="~/js/Controllers/settingsController.js"></script>
+    <script src="~/js/Controllers/logoutController.js"></script>
+
+    <script src="~/js/Directives/bootstrapSwitch.js"></script>
+
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

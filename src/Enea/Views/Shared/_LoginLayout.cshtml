@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EneaMVC</title>
+
+
+    <link rel="stylesheet" href="~/lib/animate/animate/css/animate.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/lib/bootswatch/flatly/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+
+
+    @Html.ApplicationInsightsJavaScript(TelemetryConfiguration)
+</head>
+
+
+<body class="login">
+
+
+
+    <div class="container-fluid container-table animated bounceIn">
+        <div class="row vertical-center-row">
+            <div class="col-md-4 col-md-offset-4 login-form">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

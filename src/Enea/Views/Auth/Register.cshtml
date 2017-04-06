@@ -1,0 +1,34 @@
+﻿@model Enea.ViewModels.RegisterViewModel
+
+@{
+    Layout = "_LoginLayout";
+}
+
+@section scripts{
+<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}
+
+
+    <form method="post" novalidate>
+        <div asp-validation-summary="ModelOnly"></div>
+        <div class="form-group">
+            <label asp-for="Email">Adres e-mail</label>
+            <input type="text" asp-for="Email" class="form-control" />
+            <span class="text-danger" asp-validation-for="Email"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="UserName">Nazwa użytkownika</label>
+            <input type="text" asp-for="UserName" class="form-control" />
+            <span class="text-danger" asp-validation-for="UserName"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Password">Hasło</label>
+            <input type="password" asp-for="Password" class="form-control" />
+            <span class="text-danger" asp-validation-for="Password"></span>
+        </div>
+        <div class="form-group">
+            <a asp-action="Login" asp-controller="Auth" class="btn btn-danger"><i class="glyphicon glyphicon-arrow-left"></i> Wróć</a>
+            <input type="submit" class="btn btn-success" value="Zarejestruj się" />
+        </div>
+    </form>

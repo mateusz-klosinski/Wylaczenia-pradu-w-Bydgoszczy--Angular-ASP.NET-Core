@@ -1,0 +1,32 @@
+{
+  "name": "animate.less",
+  "version": "1.0.1",
+  "main": [
+    "./demo/css/animate.css",
+    "./demo/js/jquery.js",
+    "./demo/less/bootstrap.less"
+  ],
+  "ignore": [
+    "git.php",
+    "codekit-config.json",
+    "demo/less",
+    "**/*.txt"
+  ],
+  "dependencies": {
+    "bootstrap": "2.3.2",
+    "fastclick": "master"
+  },
+  "devDependencies": {
+    "bootstrap": "2.3.2"
+  },
+  "homepage": "https://github.com/joshuapekera/animate",
+  "_release": "1.0.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "1.0.1",
+    "commit": "9a459d8b7928ca195b30badc8eb257608918109d"
+  },
+  "_source": "https://github.com/joshuapekera/animate.git",
+  "_target": "~1.0.1",
+  "_originalSource": "animate"
+}

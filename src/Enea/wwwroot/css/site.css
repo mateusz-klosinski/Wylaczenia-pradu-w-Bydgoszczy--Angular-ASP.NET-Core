@@ -1,0 +1,279 @@
+﻿html, body, .container-table {
+    height: 100%;
+}
+
+#footer {
+    color: #fff;
+    font-size: 120%;
+    font-weight: 300;
+}
+
+
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+#wrapper {
+    margin-left: 250px;
+    -moz-transition: margin-left ease .25s;
+    -o-transition: margin-left ease .25s;
+    -webkit-transition: margin-left ease .25s;
+    transition: margin-left ease .25s;
+    padding-top: 60px;
+    padding-bottom: 70px;
+    padding-left: 30px;
+}
+
+    #wrapper.hide-sidebar {
+        margin-left: 50px;
+        -moz-transition: margin-left ease .25s;
+        -o-transition: margin-left ease .25s;
+        -webkit-transition: margin-left ease .25s;
+        transition: margin-left ease .25s;
+    }
+
+/* Sidebar */
+#sidebar {
+    margin-top: 60px;
+    background: #2a2c36;
+    color: #eee;
+    position: fixed;
+    height: 100%;
+    width: 250px;
+    overflow: hidden;
+    left: 0;
+    -moz-transition: left ease .25s;
+    -o-transition: left ease .25s;
+    -webkit-transition: left ease .25s;
+    transition: left ease .25s;
+}
+
+    #sidebar.hide-sidebar {
+        left: -210px;
+        -moz-transition: left ease .25s;
+        -o-transition: left ease .25s;
+        -webkit-transition: left ease .25s;
+        transition: left ease .25s;
+    }
+
+#toggle-sidebar {
+    position: fixed;
+    margin-left: 250px;
+    margin-right: 30px;
+    left: 0;
+    -moz-transition: margin-left ease .25s;
+    -o-transition: margin-left ease .25s;
+    -webkit-transition: margin-left ease .25s;
+    transition: margin-left ease .25s;
+}
+
+    #toggle-sidebar.hide-sidebar {
+        margin-left: 40px;
+        -moz-transition: margin-left ease .25s;
+        -o-transition: margin-left ease .25s;
+        -webkit-transition: margin-left ease .25s;
+        transition: margin-left ease .25s;
+    }
+
+/* Only for login layout*/
+.login {
+    background-color: dimgrey;
+    background-image: linear-gradient(#c6c6c6, #c6c6c6, #8ab9c6);
+}
+
+.container-table {
+    display: table;
+    height: 100%;
+    width: 70%;
+}
+
+.vertical-center-row {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.login-form {
+    background-color: floralwhite;
+    border-radius: 9px;
+    padding: 10px;
+}
+
+/* Navbar logout and option buttons */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes rotate {
+    from {
+        -moz-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        -webkit-transform: rotate(90deg);
+        transform: rotate(90deg);
+    }
+
+    to {
+        -moz-transform: rotate(0);
+        -ms-transform: rotate(0);
+        -o-transform: rotate(0);
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+    }
+}
+
+@keyframes rotate {
+    from {
+        -moz-transform: rotate(0);
+        -ms-transform: rotate(0);
+        -o-transform: rotate(0);
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+    }
+
+    to {
+        -moz-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        -webkit-transform: rotate(90deg);
+        transform: rotate(90deg);
+    }
+}
+
+.nav-button:hover .nav-button-icon {
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    -moz-animation: rotate 0.5s ease-in;
+    -o-animation: rotate 0.5s ease-in;
+    -webkit-animation: rotate 0.5s ease-in;
+    animation: rotate 0.5s ease-in;
+}
+
+.nav-button:hover .nav-button-text {
+    display: inline;
+    -moz-animation: fadeIn 0.5s ease-in;
+    -o-animation: fadeIn 0.5s ease-in;
+    -webkit-animation: fadeIn 0.5s ease-in;
+    animation: fadeIn 0.5s ease-in;
+}
+
+    .nav-button:hover .nav-button-text.right {
+        left: 75%;
+        margin-right: 50px;
+    }
+
+    .nav-button:hover .nav-button-text.left {
+        left: -125%;
+    }
+
+
+.nav-button-text {
+    position: absolute;
+    text-wrap: none;
+    display: none;
+}
+
+
+/* Animation beetwen sites */
+@-webkit-keyframes slideInLeft {
+    from {
+        margin-left: -10%;
+        width: 100%;
+        opacity: 0;
+    }
+
+    to {
+        margin-left: 0;
+        width: 100%;
+        opacity: 1;
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        margin-left: -10%;
+        width: 100%;
+        opacity: 0;
+    }
+
+    to {
+        margin-left: 0;
+        width: 100%;
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes slideOutRight {
+    from {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    to {
+        margin-left: 100%;
+        width: 100%;
+    }
+}
+
+@keyframes slideOutRight {
+    from {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    to {
+        margin-left: 100%;
+        width: 100%;
+    }
+}
+
+#view.ng-enter {
+    -moz-animation: slideInLeft 0.5s both ease-in;
+    -o-animation: slideInLeft 0.5s both ease-in;
+    -webkit-animation: slideInLeft 0.5s both ease-in;
+    animation: slideInLeft 0.5s both ease-in;
+    z-index: 8888;
+    -moz-animation-delay: 0.3s;
+    -o-animation-delay: 0.3s;
+    -webkit-animation-delay: 0.3s;
+    animation-delay: 0.3s;
+}
+
+#view.ng-leave {
+    -moz-animation: slideOutRight 0.25s both ease-in;
+    -o-animation: slideOutRight 0.25s both ease-in;
+    -webkit-animation: slideOutRight 0.25s both ease-in;
+    animation: slideOutRight 0.25s both ease-in;
+    z-index: 9999;
+}
+
+
+/* Bootstrap overrides*/
+#sidebar .nav > li > a:hover, #sidebar .nav > li > a:focus {
+    background-color: inherit;
+    border-left: 5px solid white;
+    color: white;
+}
+
+#toggle-sidebar.btn-primary {
+    border-radius: 0;
+}
+
+.panel.panel-danger {
+    border-color: dimgray;
+}
+
+    .panel.panel-danger .panel-heading {
+        background-color: dimgrey;
+        border-bottom: dimgrey;
+    }
+
+.panel-danger > .panel-heading + .panel-collapse > .panel-body {
+    border-top: dimgrey;
+}

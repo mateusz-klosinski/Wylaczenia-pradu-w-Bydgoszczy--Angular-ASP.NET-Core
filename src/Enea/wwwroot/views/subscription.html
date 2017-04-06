@@ -1,0 +1,38 @@
+﻿<div class="row">
+    <div class="col-md-10 col-md-offset-1">
+        <h1>Subskrypcja email <span class="pull-right" ng-show="vm.isBusy"><i class="fa fa-circle-o-notch fa-spin"></i></span></h1>
+
+        <div ng-show="vm.errorMessage" class="alert alert-danger">
+            <i class="fa fa-warning"></i> {{ vm.errorMessage }}
+        </div>
+
+        <div>
+            <input type="checkbox"
+                   data-size="large"
+                   data-on-color="success"
+                   data-off-color="danger"
+                   data-on-text="AKTYWNA"
+                   data-off-text="NIEAKTYWNA"
+                   data-label-width="30"
+                   ng-model="vm.subscriptionData.hasActiveSubscription"
+                   bootstrap-switch />
+
+            <span ng-show="vm.isBusy">
+                <i class="fa fa-circle-o-notch fa-spin"></i> Ładowanie...
+            </span>
+        </div>
+
+        <h2>Aktywne słowa klucze</h2>
+        <p>
+            <span ng-repeat="keyWord in vm.subscriptionData.keyWords">
+                {{ keyWord.word }}
+            </span>
+        </p>
+
+        <h2>Data ostatniego powiadomienia email</h2>
+        <p ng-show="vm.subscriptionData.lastNotificationSent">{{ vm.subscriptionData.lastNotificationSent | date:'dd-MM-yyyy HH:mm' }}</p>
+        <p ng-show="!vm.subscriptionData.lastNotificationSent">Nigdy nie wysłano powiadomienia</p>
+
+        <h3>Powiadomienia wysyłane są o godzinie 12:00 każdego dnia</h3>
+    </div>
+</div>

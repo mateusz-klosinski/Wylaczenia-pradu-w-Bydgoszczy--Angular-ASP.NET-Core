@@ -1,0 +1,87 @@
+﻿<div class="row">
+    <div class="col-md-10 col-lg-offset-1">
+        <h1>Ustawienia konta <span ng-show="vm.isBusy" class="pull-right"><i class="fa fa-circle-o-notch fa-spin"></i></span></h1>
+
+
+        <div ng-show="vm.emailSuccess" class="alert alert-success">
+            {{vm.emailSuccess}}
+        </div>
+
+        <div ng-show="vm.emailFailed" class="alert alert-danger">
+            {{ vm.emailFailed }}
+        </div>
+
+        <form novalidate id="newEmailForm" name="newEmailForm" ng-submit="vm.submitCredentials('email')">
+            <div class="form-group">
+                <label for="newEmail">E-mail</label>
+                <input type="email" class="form-control" ng-model="vm.newCredentials.email" name="newEmail" id="newEmail" 
+                       placeholder="Wpisz nowy adres e-mail" required />
+                <span class="text text-danger" ng-show="newEmailForm.newEmail.$error.required">Pole jest wymagane do zmiany adresu e-mail</span>
+                <span class="text text-danger" ng-show="newEmailForm.newEmail.$error.email">Wprowadź adres email w poprawwnej postaci</span>
+            </div>
+            <div class="form-group">
+                <input ng-disabled="newEmailForm.$invalid" type="submit" class="btn btn-success" value="Zapisz" />
+            </div>
+        </form>
+
+        <div ng-show="vm.userNameSuccess" class="alert alert-success">
+            {{ vm.userNameSuccess }}
+        </div>
+
+        <div ng-show="vm.userNameFailed" class="alert alert-danger">
+            {{ vm.userNameFailed }}
+        </div>
+
+        <form novalidate id="newUsernameForm" name="newUsernameForm" ng-submit="vm.submitCredentials('username')">
+            <div class="form-group">
+                <label for="newUsername">Nazwa użytkownika</label>
+
+                <input class="form-control" ng-model="vm.newCredentials.username" name="newUsername" id="newUsername"
+                       placeholder="Wpisz nową nazwę użytkownika" required ng-minlength="5" />
+                <div class="text text-danger" ng-show="newUsernameForm.$error.required">Pole jest wymagane do zmiany nazwy użytkownika</div>
+                <div class="text text-danger" ng-show="newUsernameForm.$error.minlength">Nazwa użytkownika musi mieć chociaż 5 znaków długości</div>
+            </div>
+            <div class="form-group">
+                <input ng-disabled="newUsernameForm.$invalid" type="submit" class="btn btn-success" value="Zapisz" />
+            </div>
+        </form>
+
+        <div ng-show="vm.passwordSuccess" class="alert alert-success">
+            {{ vm.passwordSuccess }}
+        </div>
+
+        <div ng-show="vm.passwordFailed" class="alert alert-danger">
+            {{ vm.passwordFailed }}
+        </div>
+
+        <form novalidate id="newPasswordForm" name="newPasswordForm" ng-submit="vm.submitCredentials('password')">
+            <div class="form-group">
+                <label for="oldPassword">Aktualne hasło</label>
+
+                <input type="password" class="form-control" ng-model="vm.newCredentials.oldPassword" name="oldPassword" id="oldPassword"
+                       placeholder="Wpisz poprzednie hasło" required ng-minlength="6" />
+                <div class="text text-danger" ng-show="newPasswordForm.oldPassword.$error.required">Pole jest wymagane do zmiany hasła</div>
+                <div class="text text-danger" ng-show="newPasswordForm.oldPassword.$error.minlength">Hasło musi mieć przynajmniej 6 znaków długości</div>
+            </div>
+            <div class="form-group">
+                <label for="newPassword">Nowe hasło</label>
+
+                <input type="password" class="form-control" ng-model="vm.newCredentials.password" name="newPassword" id="newPassword"
+                       placeholder="Wpisz nowe hasło" required ng-minlength="6"/>
+                <div class="text text-danger" ng-show="newPasswordForm.newPassword.$error.required">Pole jest wymagane do zmiany hasła</div>
+                <div class="text text-danger" ng-show="newPasswordForm.newPassword.$error.minlength">Hasło musi mieć przynajmniej 6 znaków długości</div>
+
+                <input type="password" class="form-control" ng-model="vm.newCredentials.passwordConfirm" 
+                       match-password="newPassword" name="passwordConfirm" id="passwordConfirm" placeholder="Potwierdź hasło" required ng-minlength="6"/>
+                <div class="text text-danger" ng-show="newPasswordForm.passwordConfirm.$error.required">Pole jest wymagane do zmiany hasła</div>
+                <div class="text text-danger" ng-show="newPasswordForm.passwordConfirm.$error.minlength">Hasło musi mieć przynajmniej 6 znaków długości</div>
+                <div class="text text-danger" ng-show="newPasswordForm.passwordConfirm.$error.passwordMatch">Podane hasła są rózne</div>
+
+            </div>
+            <div class="form-group">
+                <input ng-disabled="newPasswordForm.$invalid" type="submit" class="btn btn-success" value="Zapisz" />
+            </div>
+        </form>
+
+    </div>
+</div>

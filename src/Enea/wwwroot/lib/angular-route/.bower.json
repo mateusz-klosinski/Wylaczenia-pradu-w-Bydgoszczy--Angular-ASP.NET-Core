@@ -1,0 +1,20 @@
+{
+  "name": "angular-route",
+  "version": "1.5.9-build.5041+sha.ddb4ef1",
+  "license": "MIT",
+  "main": "./angular-route.js",
+  "ignore": [],
+  "dependencies": {
+    "angular": "1.5.9-build.5041+sha.ddb4ef1"
+  },
+  "homepage": "https://github.com/angular/bower-angular-route",
+  "_release": "1.5.9-build.5041+sha.ddb4ef1",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.5.9-build.5041+sha.ddb4ef1",
+    "commit": "1b6ed9ef6404995940cb48f7cf9748418af162fb"
+  },
+  "_source": "https://github.com/angular/bower-angular-route.git",
+  "_target": "1.5.9-build.5041+sha.ddb4ef1",
+  "_originalSource": "angular-route"
+}
